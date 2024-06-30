@@ -35,13 +35,13 @@ function askQuestion() {
 // } else {
 //   console.log("Incorrect, please try again");
 //TODO 3.2 use this variable to calculate the candidates score.
-let grade;
-let numberCorrect = 0;
-let didPass;
 function gradeQuiz(candidateAnswers) {
+  let grade;
+  let numberCorrect = 0;
+  let didPass;
   for (let i = 0; i < questions.length; i++) {
-    console.log(`Question ${[i+1]}) ${questions[i]} \nYour answer: ${candidateAnswers[i]} \nCorrect answer: ${correctAnswers[i]}\n`)
-    if (candidateAnswers[i] === correctAnswers[i]) {
+    console.log(`${[i+1]}) ${questions[i]} \nYour Answer: ${candidateAnswers[i]} \nCorrect Answer: ${correctAnswers[i]}\n`);
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
       numberCorrect = numberCorrect + 1
     }
   grade = (numberCorrect / questions.length) * 100;
@@ -51,7 +51,7 @@ function gradeQuiz(candidateAnswers) {
   } else {
     didPass = "Status: FAILED"
   }
-  console.log(`>>> Overall Grade: ${grade}% (${numberCorrect} of ${questions.length} responses correct)\n>>> ${didPass}`);
+  console.log(`>>> Overall Grade: ${grade}% (${numberCorrect} of ${questions.length} responses correct) <<<\n>>> ${didPass} <<<`);
   return grade;
 }
 //TODO 3.2 use this variable to calculate the candidates score.
